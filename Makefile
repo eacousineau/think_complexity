@@ -21,6 +21,8 @@ all:	book.tex
 	mv book.pdf thinkcomplexity.pdf
 	evince thinkcomplexity.pdf
 
+pdf_figures:
+	+ cd figs && make
 hevea:
 	# replace the pdfs with eps
 	sed s/.pdf/.eps/g book.tex > temp.tex
@@ -73,4 +75,4 @@ oreilly:
 
 clean:
 	rm -f *~ *.aux *.log *.dvi *.idx *.ilg *.ind *.toc
-
+	cd figs && make clean
